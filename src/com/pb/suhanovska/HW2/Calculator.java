@@ -39,8 +39,8 @@ public class Calculator {
     }
 
     public static int calc(int operand1, int operand2, char operation){
-        int result;
-        switch (operation){
+        int result = 0;
+       switch (operation){
             case '+':
                 result = operand1+operand2;
                 break;
@@ -50,7 +50,9 @@ public class Calculator {
             case '*':
                 result = operand1*operand2;
                 break;
-            case '/':
+            case '/': if (operand2==0) {
+                System.out.println("На ноль делить нельзя"); }
+                else if (operand2>0)
                 result = operand1/operand2;
                 break;
             default:
